@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Plumbing .Co | Emergency Plumber in Austin, TX</title>
+    <style>
+        /* إعدادات الألوان والمتغيرات الأساسية */
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #ffc107;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --white-color: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* القائمة العلوية - Navigation */
+        header {
+            background: var(--white-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 24px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-color);
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-call {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-call:hover {
+            background: #e0a800;
+        }
+
+        /* القسم الرئيسي - Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 86, 179, 0.85), rgba(0, 86, 179, 0.85)), url('hero-bg.jpg') no-repeat center center/cover;
+            color: var(--white-color);
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns .btn-primary {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 15px;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .hero-btns .btn-secondary {
+            background: transparent;
+            color: var(--white-color);
+            border: 2px solid var(--white-color);
+            padding: 13px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .hero-btns .btn-primary:hover {
+            background: #e0a800;
+        }
+
+        .hero-btns .btn-secondary:hover {
+            background: var(--white-color);
+            color: var(--primary-color);
+        }
+
+        /* قسم مميزات الثقة - Trust Badges */
+        .badges {
+            background: var(--light-color);
+            padding: 40px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .badges-container {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .badge-item {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .badge-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        /* قسم الخدمات - Services Section */
+        .services {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white-color);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .service-card h3 {
+            padding: 20px 20px 10px;
+            color: var(--dark-color);
+            font-size: 22px;
+        }
+
+        .service-card p {
+            padding: 0 20px 20px;
+            color: #6c757d;
+        }
+
+        /* قسم نموذج الحجز - Booking Section */
+        .booking {
+            background: var(--light-color);
+            padding: 80px 20px;
+        }
+
+        .booking-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white-color);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .booking h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .btn-submit {
+            background: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            width: 100%;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #004085;
+        }
+
+        /* التذييل - Footer */
+        footer {
+            background: var(--dark-color);
+            color: #adb5bd;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+
+        /* الشاشات الصغيرة - Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            nav {
+                margin-bottom: 10px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-btns .btn-primary {
+                margin-right: 0;
+                margin-bottom: 15px;
+                display: block;
+            }
+
+            .hero-btns .btn-secondary {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Apex Plumbing Co.</a>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#why-choose-us">Why Choose Us</a>
+                <a href="#book-now">Book Online</a>
+            </nav>
+            <a href="tel:5125550199" class="btn-call">Call Now: (512) 555-0199</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Fast & Reliable Emergency Plumbing Services in Austin</h1>
+            <p>Available 24/7 for residential and commercial repairs. Licensed, insured, and ready to fix your plumbing issues today.</p>
+            <div class="hero-btns">
+                <a href="#book-now" class="btn-primary">Schedule Service Now</a>
+                <a href="tel:5125550199" class="btn-secondary">Call (512) 555-0199</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="badges" id="why-choose-us">
+        <div class="badges-container">
+            <div class="badge-item">
+                <h3>⏰ 24/7 Response</h3>
+                <p>Always ready for emergency plumbing repairs day or night.</p>
+            </div>
+            <div class="badge-item">
+                <h3>🛡️ Certified Experts</h3>
+                <p>Licensed, insured, and fully trained professional technicians.</p>
+            </div>
+            <div class="badge-item">
+                <h3>💰 Upfront Pricing</h3>
+                <p>Clear, honest estimates with no hidden fees or surprises.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Professional Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="service1.jpg" alt="Leak Detection & Repair">
+                <h3>Leak Detection & Repair</h3>
+                <p>Advanced diagnostic tools to find and repair water leaks quickly before they cause major property damage.</p>
+            </div>
+            <div class="service-card">
+                <img src="service2.jpg" alt="Water Heater Installation">
+                <h3>Water Heater Services</h3>
+                <p>Expert installation, maintenance, and repair for traditional tank and modern tankless water heaters.</p>
+            </div>
+            <div class="service-card">
+                <img src="service3.jpg" alt="Drain Cleaning">
+                <h3>Drain Cleaning</h3>
+                <p>Clearing tough clogs and restoring smooth flow to your kitchen, bathroom, or main sewer lines.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="book-now">
+        <div class="booking-container">
+            <h2>Request a Free Estimate</h2>
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required placeholder="(512) 555-0100">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Needed</label>
+                    <select id="service" required>
+                        <option value="">Select a service...</option>
+                        <option value="leak">Leak Detection & Repair</option>
+                        <option value="heater">Water Heater Service</option>
+                        <option value="drain">Drain Cleaning</option>
+                        <option value="other">Other Plumbing Issue</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Brief Description</label>
+                    <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Send Request</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Apex Plumbing Co. All rights reserved. Serving Austin, TX and surrounding areas.</p>
+    </footer>
+
+</body>
+</html>
